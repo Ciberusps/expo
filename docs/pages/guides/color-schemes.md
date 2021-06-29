@@ -54,9 +54,7 @@ public class MainActivity extends ReactActivity {
   @Override
   public void onConfigurationChanged(Configuration newConfig) {
     super.onConfigurationChanged(newConfig);
-    Intent intent = new Intent("onConfigurationChanged");
-    intent.putExtra("newConfig", newConfig);
-    sendBroadcast(intent);
+    getReactInstanceManager().onConfigurationChanged(this, newConfig);
   }
   ......
 }
@@ -137,4 +135,5 @@ While you're developing, you may want to change your simulator's or device's app
 
 - If working with an iOS emulator locally, you can use the `command` + `shift` + `a` shortcut to toggle between light and dark mode.
 - If using a real device or an Android emulator, you can toggle the system dark mode setting in the device's settings.
+- "Debug" must be turned off
 - [Snack](https://snack.expo.io) is locked to light mode.
